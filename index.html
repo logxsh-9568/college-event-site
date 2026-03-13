@@ -32,8 +32,6 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-color:white;
 }
 
 .second img{
@@ -93,6 +91,21 @@ right:25px;
 bottom:25px;
 z-index:9999;
 padding:14px 24px;
+}
+
+.place{
+background:rgba(255,255,255,0.08);
+padding:15px;
+margin:10px;
+border-radius:8px;
+opacity:0;
+transform:translateX(100px);
+transition:0.6s;
+}
+
+.show{
+opacity:1;
+transform:translateX(0);
 }
 </style>
 </head>
@@ -206,7 +219,6 @@ function openForm(){
 showLevel3();
 
 window.open("https://docs.google.com/forms/d/e/1FAIpQLSdaJDtSHMPhGYxpClndyngY49_0L_2ohp1Lpm3T1xHaAbCm6Q/viewform?usp=publish-editor","_blank");
-
 }
 
 function showLevel3(){
@@ -226,6 +238,7 @@ document.getElementById("content").innerHTML=`
 <h1>Level 3 - Innovative Challenge</h1>
 <p>Reveal one topic only</p>
 <div class="grid">${cards}</div>
+<button id="nextBtn" class="nextBtn" onclick="openLevel3Form()">Submit Level 3</button>
 `;
 }
 
@@ -241,7 +254,46 @@ selected=true;
 document.querySelectorAll(".card button").forEach(b=>{
 if(b!==btn){ b.disabled=true; }
 });
+
+document.getElementById("nextBtn").style.display="inline-block";
 }
+
+function openLevel3Form(){
+
+showResults();
+
+window.open("YOUR-LEVEL3-FORM-LINK","_blank");
+}
+
+function showResults(){
+
+document.getElementById("content").innerHTML=`
+<h1>🏆 Final Results</h1>
+<p>Press ENTER to reveal results</p>
+
+<div class="place">🥇 1st Place - Team J</div>
+<div class="place">🥈 2nd Place - Team I</div>
+<div class="place">🥉 3rd Place - Team H</div>
+<div class="place">4th Place - Team G</div>
+<div class="place">5th Place - Team F</div>
+`;
+}
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+
+let results=document.querySelectorAll(".place");
+
+for(let i=0;i<results.length;i++){
+setTimeout(()=>{
+results[i].classList.add("show");
+},i*400);
+}
+
+}
+
+});
 
 window.addEventListener("pageshow", function(){
 
