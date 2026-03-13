@@ -6,9 +6,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('poster.jpg.jpg');
+    background-image: url('./poster.jpg.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     font-family: Arial;
 }
@@ -25,6 +26,7 @@ button {
     font-size: 18px;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .admin {
@@ -42,8 +44,8 @@ button {
 <body>
 
 <div class="button-box">
-<button class="admin">Admin Login</button>
-<button class="user">User Login</button>
+    <button class="admin">Admin Login</button>
+    <button class="user">User Login</button>
 </div>
 
 </body>
