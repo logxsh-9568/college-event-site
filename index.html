@@ -9,30 +9,14 @@
 body{
 margin:0;
 font-family:Arial;
-scroll-behavior:smooth;
 }
 
 /* FIRST PAGE */
 
 .front{
 height:100vh;
-background:url('poster.jpg.jpg') no-repeat center center fixed;
+background:url('poster.jpg.jpg') no-repeat center center;
 background-size:cover;
-position:relative;
-}
-
-.scroll-btn{
-position:absolute;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-padding:10px 22px;
-background:#444;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
-font-size:16px;
 }
 
 /* SECOND PAGE */
@@ -40,29 +24,29 @@ font-size:16px;
 .second{
 height:100vh;
 background:white;
-text-align:center;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+text-align:center;
 padding:20px;
 }
 
 .second img{
-max-width:700px;
-width:90%;
+width:80%;
+max-width:800px;
 height:auto;
 margin-bottom:30px;
 }
 
 h2{
-font-size:28px;
+font-size:32px;
 margin:10px 0;
 color:#222;
 }
 
 h3{
-font-size:24px;
+font-size:26px;
 margin:10px 0;
 color:#444;
 }
@@ -73,17 +57,16 @@ color:#444;
 
 <!-- FIRST PAGE -->
 
-<div class="front">
-<button class="scroll-btn" onclick="document.getElementById('next').scrollIntoView()">Next</button>
-</div>
+<div class="front"></div>
 
 <!-- SECOND PAGE -->
 
-<div class="second" id="next">
+<div class="second">
 
-<img src="college.jpg" alt="College Banner">
+<img src="college.jpg.jpeg" alt="College Banner">
 
 <h2>Department of CSE</h2>
+
 <h3>(Artificial Intelligence and Machine Learning)</h3>
 
 <h2>Intra Department App Contest 1.0</h2>
