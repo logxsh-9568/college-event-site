@@ -105,7 +105,7 @@ transform:scale(1.05);
 .nextBtn{
 display:none;
 position:fixed;
-left:20px;
+right:20px;
 bottom:20px;
 z-index:9999;
 padding:14px 24px;
@@ -215,51 +215,7 @@ document.getElementById("nextBtn").style.display="inline-block";
 }
 
 function technicalPage(){
-
-document.getElementById("content").innerHTML=`
-
-<h1>Level 3 – Technical Test</h1>
-<p>Submit technical project</p>
-
-<button onclick="technicalForm()">Open Technical Form</button>
-
-`;
-}
-
-function technicalForm(){
-
 window.open("https://docs.google.com/forms/d/e/1FAIpQLSdaJDtSHMPhGYxpClndyngY49_0L_2ohp1Lpm3T1xHaAbCm6Q/viewform?usp=publish-editor","_blank");
-
-document.getElementById("content").innerHTML=`
-
-<h1>Level 4 – Innovative Test</h1>
-
-<button onclick="innovativePage()">Next</button>
-
-`;
-}
-
-function innovativePage(){
-
-document.getElementById("content").innerHTML=`
-
-<h1>Innovative Test</h1>
-
-<button onclick="innovativeForm()">Open Submission Form</button>
-
-`;
-}
-
-function innovativeForm(){
-
-window.open("https://docs.google.com/forms/d/e/1FAIpQLSdFcEPPmdc31tPw3o4eJNxDQ4VrBqE1udGQSi9x7f9eOYidDw/viewform?usp=publish-editor","_blank");
-
-document.getElementById("content").innerHTML=`
-
-<h1>Competition Completed</h1>
-<h2>Thank You</h2>
-
-`;
 }
 
 window.addEventListener("pageshow", function(){
