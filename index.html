@@ -107,7 +107,10 @@ display:none;
 position:fixed;
 left:20px;
 bottom:20px;
-z-index:1000;
+z-index:9999;
+padding:14px 24px;
+font-size:16px;
+box-shadow:0 0 15px rgba(0,230,255,0.8);
 }
 </style>
 </head>
@@ -189,7 +192,7 @@ document.getElementById("content").innerHTML=`
 
 <div class="grid">${cards}</div>
 
-<button id="nextBtn" class="nextBtn" onclick="technicalPage()">Open Technical Form</button>
+<button id="nextBtn" class="nextBtn" onclick="technicalPage()">Submit APK</button>
 
 `;
 }
