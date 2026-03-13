@@ -255,12 +255,12 @@ document.getElementById("content").innerHTML=`
 `;
 }
 
-window.onload=function(){
+window.addEventListener("pageshow", function(){
 if(sessionStorage.getItem("openLevel2")=="yes"){
 showTopicPage();
 sessionStorage.removeItem("openLevel2");
 }
-}
+});
 
 </script>
 
