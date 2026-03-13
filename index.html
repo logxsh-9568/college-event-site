@@ -131,10 +131,6 @@ display:none;
 
 <button onclick="startQuiz()">Start Quiz</button>
 
-<br><br>
-
-<button onclick="showTopicPage()">Back To Website</button>
-
 </div>
 
 </div>
@@ -164,6 +160,7 @@ let questions=[
 let selected=false;
 
 function startQuiz(){
+sessionStorage.setItem("openLevel2","yes");
 window.location.href="YOUR-QUIZ-LINK";
 }
 
@@ -256,6 +253,13 @@ document.getElementById("content").innerHTML=`
 <h2>Thank You</h2>
 
 `;
+}
+
+window.onload=function(){
+if(sessionStorage.getItem("openLevel2")=="yes"){
+showTopicPage();
+sessionStorage.removeItem("openLevel2");
+}
 }
 
 </script>
