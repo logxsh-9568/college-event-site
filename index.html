@@ -92,19 +92,6 @@ bottom:25px;
 z-index:9999;
 padding:14px 24px;
 }
-
-.thank{
-font-size:70px;
-font-weight:bold;
-color:gold;
-text-shadow:0 0 25px gold;
-}
-
-.sub{
-font-size:30px;
-margin-top:20px;
-color:white;
-}
 </style>
 </head>
 
@@ -259,8 +246,8 @@ document.getElementById("nextBtn").style.display="inline-block";
 function openLevel3Form(){
 
 sessionStorage.setItem("showThank","yes");
+window.location.href="https://forms.gle/JhHv7DdCk54hfeJf7";
 
-window.open("https://forms.gle/JhHv7DdCk54hfeJf7","_blank");
 }
 
 function showThankYou(){
@@ -268,7 +255,9 @@ function showThankYou(){
 document.getElementById("content").innerHTML=`
 <img src="thankyou.jpg.jpeg" style="width:100%;max-width:1000px;border-radius:15px;box-shadow:0 0 25px gold;">
 `;
+
 }
+
 window.addEventListener("pageshow", function(){
 
 if(sessionStorage.getItem("showThank")=="yes"){
@@ -283,6 +272,7 @@ sessionStorage.removeItem("openLevel2");
 }
 
 });
+
 </script>
 
 </body>
