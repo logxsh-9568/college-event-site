@@ -93,19 +93,17 @@ z-index:9999;
 padding:14px 24px;
 }
 
-.place{
-background:rgba(255,255,255,0.08);
-padding:15px;
-margin:10px;
-border-radius:8px;
-opacity:0;
-transform:translateX(100px);
-transition:0.6s;
+.thank{
+font-size:70px;
+font-weight:bold;
+color:gold;
+text-shadow:0 0 25px gold;
 }
 
-.show{
-opacity:1;
-transform:translateX(0);
+.sub{
+font-size:30px;
+margin-top:20px;
+color:white;
 }
 </style>
 </head>
@@ -260,42 +258,26 @@ document.getElementById("nextBtn").style.display="inline-block";
 
 function openLevel3Form(){
 
-showResults();
+sessionStorage.setItem("showThank","yes");
 
 window.open("https://forms.gle/JhHv7DdCk54hfeJf7","_blank");
 }
 
-function showResults(){
+function showThankYou(){
 
 document.getElementById("content").innerHTML=`
-<h1>🏆 Final Results</h1>
-<p>Press ENTER to reveal results</p>
-
-<div class="place">🥇 1st Place - Team J</div>
-<div class="place">🥈 2nd Place - Team I</div>
-<div class="place">🥉 3rd Place - Team H</div>
-<div class="place">4th Place - Team G</div>
-<div class="place">5th Place - Team F</div>
+<div class="thank">THANK YOU</div>
+<div class="sub">Competition Completed</div>
 `;
 }
 
-document.addEventListener("keydown",function(e){
-
-if(e.key==="Enter"){
-
-let results=document.querySelectorAll(".place");
-
-for(let i=0;i<results.length;i++){
-setTimeout(()=>{
-results[i].classList.add("show");
-},i*400);
-}
-
-}
-
-});
-
 window.addEventListener("pageshow", function(){
+
+if(sessionStorage.getItem("showThank")=="yes"){
+showThankYou();
+sessionStorage.removeItem("showThank");
+return;
+}
 
 if(sessionStorage.getItem("openLevel2")=="yes"){
 showTopicPage();
