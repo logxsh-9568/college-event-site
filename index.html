@@ -266,11 +266,9 @@ window.open("https://forms.gle/JhHv7DdCk54hfeJf7","_blank");
 function showThankYou(){
 
 document.getElementById("content").innerHTML=`
-<div class="thank">THANK YOU</div>
-<div class="sub">Competition Completed</div>
+<img src="thankyou.jpg.jpeg" style="width:100%;max-width:1000px;border-radius:15px;box-shadow:0 0 25px gold;">
 `;
 }
-
 window.addEventListener("pageshow", function(){
 
 if(sessionStorage.getItem("showThank")=="yes"){
